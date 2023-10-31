@@ -77,41 +77,34 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               height: 1.2,
                             ),
                           ),
-                          SizedBox(height: 16),
-                          Text(
-                            "Don’t skip design. Learn design and code, by building real apps with Flutter and Swift. Complete courses about the best tools.",
-                          ),
                         ],
                       ),
                     ),
                     const Spacer(flex: 4),
-                    AnimatedBtn(
-                      btnAnimationColtroller: _btnAnimationColtroller,
-                      press: () {
-                        _btnAnimationColtroller.isActive = true;
-                        Future.delayed(
-                          const Duration(milliseconds: 800),
-                          () {
-                            setState(() {
-                              isSignInDialogShown = true;
-                            });
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 100),
+                      child: AnimatedBtn(
+                        btnAnimationColtroller: _btnAnimationColtroller,
+                        press: () {
+                          _btnAnimationColtroller.isActive = true;
+                          Future.delayed(
+                            const Duration(milliseconds: 800),
+                            () {
+                              setState(() {
+                                isSignInDialogShown = true;
+                              });
 
-                            customSigninDialog(
-                              context,
-                              onCLosed: (_) {
-                                setState(() {
-                                  isSignInDialogShown = false;
-                                });
-                              },
-                            );
-                          },
-                        );
-                      },
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 24),
-                      child: Text(
-                        "Purchase includes access to 30+ courses, 240+ premium tutorials, 120+ hours of videos, source files and certificates.",
+                              customSigninDialog(
+                                context,
+                                onCLosed: (_) {
+                                  setState(() {
+                                    isSignInDialogShown = false;
+                                  });
+                                },
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                   ],
